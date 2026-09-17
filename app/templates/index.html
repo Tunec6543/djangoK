@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">СайтРу</div>
+
+            <nav class="nav">
+                <a href="{% url 'index' %}" class="active">Главная</a>
+                <a href="{% url 'about' %}">О нас</a>
+                <a href="{% url 'services' %}">Услуги</a>
+                <a href="{% url 'contacts' %}">Контакты</a>
+                <a href="{% url 'auth' %}">Войти</a>
+                <a href="{% url 'profile' %}">Профиль</a>
+            </nav>
+            <button id="theme-btn" class="theme-toogle">🌛</button>
+        </header>
+
+        <main class="hero">
+            <h1>Добро пожаловать на мой сайт!</h1>
+            <p>Здесь есть буквы</p>
+            <a href="{% url 'about' %}" class="btn">Узнать больше</a>
+            <div class="cards-grid">
+            {%for product in products%}
+                <div class="card">
+                    <h2>{{product.name}}</h2>
+                    <p>{{product.description}}</p>
+                    <p>{{product.price}} рублей</p>
+                </div>
+            {%endfor%}
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 все права защищены ✨</p>
+        </footer>
+        <script src="{% static 'script.js' %}"></script>
+    </body>
+</html>

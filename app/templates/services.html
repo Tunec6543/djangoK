@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">СайтРу</div>
+        <nav class="nav">
+            <a href="{% url 'index' %}">Главная</a>
+            <a href="{% url 'about' %}">О нас</a>
+            <a href="{% url 'services' %}" class="active">Услуги</a>
+            <a href="{% url 'contacts' %}">Контакты</a>
+            <a href="{% url 'auth' %}">Войти</a>
+            <a href="{% url 'profile' %}">Профиль</a>
+        </nav>
+        <button id="theme-btn" class="theme-toogle">🌛</button>
+    </header>
+
+    <main class="content">
+        <h1>Наши услуги</h1>
+        <p>Мы делаем сайты быстро, качественно и только на чистом коде!</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Быстрая верстка</h3>
+                <p>Чистый и понятный код без мусора и тяжёлы библиотек.</p>
+                <a href="#" class="card-link">Подробнее →</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Адаптивность</h3>
+                <p>сайт отлично выглядит на телефона, планшета и компьютерах</p>
+                <a href="#" class="card-link">Подробнее →</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌸</div>
+                <h3>Забота о деталях</h3>
+                <p>Красивые отступы, приятные шрифты и плавные анимации.</p>
+                <a href="#" class="card-link">Подробнее →</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Все права защищены ✨</p>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

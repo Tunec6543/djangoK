@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">СайтРу</div>
+        <nav class="nav">
+            <a href="{% url 'index' %}">Главная</a>
+            <a href="{% url 'about' %}">О нас</a>
+            <a href="{% url 'services' %}">Услуги</a>
+            <a href="{% url 'contacts' %}">Контакты</a>
+            <a href="{% url 'auth' %}">Войти</a>
+            <a href="{% url 'profile' %}" class="active">Профиль</a>
+        </nav>
+        <button id="theme-btn" class="theme-toogle">🌛</button>
+    </header>
+
+    <main class="content">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="avatar">🐾</div>
+                <div class="profile-title">
+                    <h1>Иван Иванов</h1>
+                    <p class="role">Разработчик сайтов</p>
+                </div>
+            </div>
+
+            <div class="profile-info">
+                <div class="info-item">
+                    <span class="label">Email:</span>
+                    <span class="value">ivan@example.ru</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Дата регистрации:</span>
+                    <span class="value">сентябрь 2026</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Статус:</span>
+                    <span class="value status-active">Активен ✨</span>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn">Редактировать профиль</button>
+                <a href="auth.html" class="btn-logout">Выйти из аккаунта</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Все права защищены ✨</p>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

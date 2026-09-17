@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <header class="header">
+        <div class="logo">СайтРу</div>
+        <nav class="nav">
+            <a href="{% url 'index' %}">Главная</a>
+            <a href="{% url 'about' %}" class="active">О нас</a>
+            <a href="{% url 'services' %}">Услуги</a>
+            <a href="{% url 'contacts' %}">Контакты</a>
+            <a href="{% url 'auth' %}">Войти</a>
+            <a href="{% url 'profile' %}">Профиль</a>
+        </nav>
+        <button id="theme-btn" class="theme-toogle">🌛</button>
+    </header>
+
+    <main class="content">
+        <h1>О нас</h1>
+        <p> буква <- буква </p>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Все права защищены ✨</p>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+    </body>
+</html>
